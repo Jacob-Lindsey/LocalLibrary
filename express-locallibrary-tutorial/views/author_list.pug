@@ -1,0 +1,12 @@
+extends layout 
+
+block content 
+    h1= title 
+
+    ul.book-list 
+        each author in author_list 
+            li.item
+                a(href=author.url) #{author.first_name} #{author.family_name}
+                |   &nbsp&nbsp&nbsp( #{author.lifespan} )
+        else 
+            li There are no authors.
